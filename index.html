@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obsidian Trading Line – Global Trade, Seamless Connections</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Alpine.js for interactivity -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 0.8)), url('/images/index/cover.png');
+            background-size: cover;
+            background-position: center;
+        }
+        /* Animation classes for scroll-triggered effects */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-up.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .partner-logo {
+            filter: grayscale(100%) contrast(0%) brightness(1.5);
+            transition: all 0.3s ease;
+        }
+        .partner-logo:hover {
+             filter: grayscale(0%) contrast(100%) brightness(1);
+        }
+        .testimonial-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800" x-data="{ mobileMenuOpen: false }">
+
+    <!-- ======== Header & Navigation Section ======== -->
+    <header class="bg-white/80 backdrop-blur-sm shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <!-- Updated Logo and Company Name -->
+            <a href="index.html" class="flex items-center space-x-3">
+                <img src="/images/icon/OTL_LOGO.png" alt="Obsidian Trading Line Logo" class="h-12 w-auto">
+                <img src="/images/icon/OTL_NAME.png" alt="Obsidian Trading Line" class="hidden sm:inline-block h-12 w-auto">
+            </a>
+            
+            <!-- Desktop Menu -->
+            <ul class="hidden lg:flex items-center space-x-10">
+                <li><a href="index.html" class="text-gray-900 font-semibold border-b-2 border-blue-600 pb-1">Home</a></li>
+                <li><a href="about.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">About Us</a></li>
+                <li><a href="products.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">Products</a></li>
+                <li><a href="network.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">Global Network</a></li>
+                <li><a href="contact.html" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded-lg transition duration-300 shadow-md hover:shadow-lg">Contact Us</a></li>
+            </ul>
+            
+            <!-- Mobile Menu Button -->
+            <button @click="mobileMenuOpen = !mobileMenuOpen" class="lg:hidden text-gray-700 focus:outline-none">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        
+        <!-- Mobile Menu -->
+        <div x-show="mobileMenuOpen" @click.away="mobileMenuOpen = false" class="lg:hidden" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95">
+            <ul class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <li><a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-blue-600">Home</a></li>
+                <li><a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-blue-600">About Us</a></li>
+                <li><a href="products.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-blue-600">Products</a></li>
+                <li><a href="network.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-blue-600">Global Network</a></li>
+                <li><a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-blue-600">Contact Us</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- ======== Hero Section ======== -->
+        <section class="hero-bg text-white">
+            <div class="container mx-auto px-6 py-28 md:py-40 text-center">
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4">Global Trade, Seamless Connections</h1>
+                <p class="max-w-3xl mx-auto text-lg md:text-xl text-gray-300 mb-10">
+                    We are your strategic partner in sourcing and delivering premium products across pharmaceuticals, agro commodities, industrial materials, and renewable energy solutions worldwide.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="products.html" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-10 rounded-lg transition duration-300 text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1">Explore Our Products</a>
+                    <a href="#about" class="bg-gray-700/50 hover:bg-gray-700/80 backdrop-blur-sm border border-gray-600 text-white font-bold py-4 px-10 rounded-lg transition duration-300 text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======== Trusted By Section ======== -->
+        <section class="bg-gray-100 py-12">
+            <div class="container mx-auto px-6">
+                <h3 class="text-center text-gray-500 font-semibold text-sm uppercase tracking-widest mb-8">Trusted by industry leaders worldwide</h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-8 gap-x-4 items-center">
+                    
+                    <!-- Partner Logos: Replace the src with your actual image paths -->
+                    <div class="flex justify-center">
+                        <img src="/images/icon/Sesame.png" alt="Sesame SARL Logo" class="partner-logo h-10">
+                    </div>
+                    <div class="flex justify-center">
+                        <img src="/images/icon/sunlong.png" alt="Sunlong Bus Logo" class="partner-logo h-10">
+                    </div>
+                    <div class="flex justify-center">
+                        <img src="/images/icon/TUNGHSU PHARMA GLASS.png" alt="Pharmaceutical Partner Logo" class="partner-logo h-10">
+                    </div>
+                    <div class="flex justify-center">
+                        <img src="/images/icon/Jenshin.png" alt="Jenshin Industrial Supply Logo" class="partner-logo h-10">
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ======== About Snippet Section ======== -->
+        <section id="about" class="py-20 md:py-28">
+            <div class="container mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                    <div class="fade-in-up">
+                        <span class="text-blue-600 font-semibold uppercase">Who We Are</span>
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-6">Connecting Markets, Delivering Uncompromising Quality</h2>
+                        <p class="text-lg text-gray-600 mb-6">
+                            At Obsidian Trading Line, we bridge the gap between suppliers and buyers across the globe. With robust networks in China, Africa, Europe, and the USA, we are masters of logistics and quality assurance, ensuring every deal is executed with precision and trust.
+                        </p>
+                        <a href="about.html" class="inline-block mt-4 bg-gray-800 hover:bg-gray-900 text-white font-bold py-3 px-8 rounded-lg transition duration-300">More About Us</a>
+                    </div>
+                    <div class="fade-in-up">
+                        <img src="/images/index/img1.png" alt="Professional team in a meeting" class="rounded-lg shadow-2xl w-full h-auto">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ======== Animated Statistics Section ======== -->
+        <section id="statistics" class="py-20 bg-gray-800 text-white">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="fade-in-up">
+                        <h3 class="text-5xl font-extrabold text-blue-400" x-data="counter(25)" x-text="Math.round(count)">25</h3>
+                        <p class="mt-2 text-lg text-gray-300">Countries Served</p>
+                    </div>
+                    <div class="fade-in-up" style="transition-delay: 0.2s;">
+                        <h3 class="text-5xl font-extrabold text-blue-400" x-data="counter(10000)" x-text="Math.round(count) + '+'">10,000+</h3>
+                        <p class="mt-2 text-lg text-gray-300">Successful Shipments</p>
+                    </div>
+                    <div class="fade-in-up" style="transition-delay: 0.4s;">
+                        <h3 class="text-5xl font-extrabold text-blue-400" x-data="counter(500)" x-text="Math.round(count) + '+'">500+</h3>
+                        <p class="mt-2 text-lg text-gray-300">Satisfied Clients</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======== Featured Products Section ======== -->
+        <section class="py-20 md:py-28 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-16 fade-in-up">
+                    <span class="text-blue-600 font-semibold uppercase">Our Expertise</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">A Diverse Portfolio to Power Your Business</h2>
+                    <p class="text-lg text-gray-600 mt-4">We provide essential materials and solutions across key global industries.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Product Cards with Icons -->
+                    <div class="product-card bg-white p-8 rounded-lg shadow-lg fade-in-up">
+                        <div class="bg-blue-100 text-blue-600 rounded-full h-12 w-12 flex items-center justify-center mb-4"><svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg></div>
+                        <h3 class="text-xl font-bold mb-2">Pharmaceuticals</h3>
+                        <p class="text-gray-600">High-purity APIs, medicine powders, and sterile packaging materials.</p>
+                    </div>
+                    <div class="product-card bg-white p-8 rounded-lg shadow-lg fade-in-up" style="transition-delay: 0.1s;">
+                        <div class="bg-green-100 text-green-600 rounded-full h-12 w-12 flex items-center justify-center mb-4"><svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5-2.5-7S3 7 3 7a8 8 0 0114.657 11.657zM12 12h.01" /></svg></div>
+                        <h3 class="text-xl font-bold mb-2">Agro Commodities</h3>
+                        <p class="text-gray-600">Premium cashew nuts, sesame seeds, authentic spices, and more.</p>
+                    </div>
+                    <div class="product-card bg-white p-8 rounded-lg shadow-lg fade-in-up" style="transition-delay: 0.2s;">
+                        <div class="bg-yellow-100 text-yellow-600 rounded-full h-12 w-12 flex items-center justify-center mb-4"><svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg></div>
+                        <h3 class="text-xl font-bold mb-2">Industrial Supplies</h3>
+                        <p class="text-gray-600">Industrial-grade aluminium, high-quality cotton, and other raw materials.</p>
+                    </div>
+                    <div class="product-card bg-white p-8 rounded-lg shadow-lg fade-in-up" style="transition-delay: 0.3s;">
+                        <div class="bg-teal-100 text-teal-600 rounded-full h-12 w-12 flex items-center justify-center mb-4"><svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg></div>
+                        <h3 class="text-xl font-bold mb-2">Renewable Energy</h3>
+                        <p class="text-gray-600">Sustainable solutions including solar buses, panels, and accessories.</p>
+                    </div>
+                    <div class="product-card bg-white p-8 rounded-lg shadow-lg fade-in-up" style="transition-delay: 0.4s;">
+                        <div class="bg-indigo-100 text-indigo-600 rounded-full h-12 w-12 flex items-center justify-center mb-4"><svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg></div>
+                        <h3 class="text-xl font-bold mb-2">Home Appliances</h3>
+                        <p class="text-gray-600">Modern, energy-efficient appliances for everyday convenience.</p>
+                    </div>
+                    <div class="bg-blue-600 text-white p-8 rounded-lg shadow-lg flex flex-col justify-center items-center text-center fade-in-up" style="transition-delay: 0.5s;">
+                         <h3 class="text-xl font-bold mb-2">Explore Our Full Range</h3>
+                         <p class="text-blue-200">Our capabilities extend across numerous sectors. Discover how we can help you.</p>
+                         <a href="products.html" class="mt-4 bg-white text-blue-600 font-bold py-2 px-5 rounded-lg transition duration-300">View All Products</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    <!-- ======== Footer Section ======== -->
+    <footer class="bg-gray-900 text-white">
+        <div class="container mx-auto px-6 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="col-span-1 md:col-span-2 lg:col-span-1">
+                    <img src="/images/icon/OTL_NAME.png" alt="Obsidian Trading Line Logo" class="h-12 w-auto filter invert">
+                    <p class="mt-4 text-gray-400">Your strategic partner in global trade and logistics.</p>
+                </div>
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="products.html" class="text-gray-400 hover:text-white">Products</a></li>
+                        <li><a href="network.html" class="text-gray-400 hover:text-white">Network</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <!-- Product Categories -->
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Industries</h4>
+                    <ul class="space-y-2">
+                        <li><a href="products/pharmaceuticals.html" class="text-gray-400 hover:text-white">Pharmaceuticals</a></li>
+                        <li><a href="products/agro-food.html" class="text-gray-400 hover:text-white">Agro Commodities</a></li>
+                        <li><a href="products/industrial-supplies.html" class="text-gray-400 hover:text-white">Industrial Supplies</a></li>
+                        <li><a href="products/renewable-energy.html" class="text-gray-400 hover:text-white">Renewable Energy</a></li>
+                    </ul>
+                </div>
+                <!-- Contact -->
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Get in Touch</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>contact@obsidiantradingline.com</li>
+                        <li>+[Your Phone Number]</li>
+                        <li>[Your City, Country]</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-16 pt-8 border-t border-gray-800 text-center text-gray-500">
+                <p>&copy; 2025 Obsidian Trading Line. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Animations -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Scroll-triggered fade-in animation
+            const animatedElements = document.querySelectorAll('.fade-in-up');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            animatedElements.forEach(el => observer.observe(el));
+
+            // Animated counter using Alpine.js
+            document.addEventListener('alpine:init', () => {
+                Alpine.data('counter', (target) => ({
+                    count: 0,
+                    target: target,
+                    init() {
+                        const observer = new IntersectionObserver((entries) => {
+                            entries.forEach(entry => {
+                                if (entry.isIntersecting) {
+                                    this.animateCount();
+                                    observer.unobserve(this.$el);
+                                }
+                            });
+                        }, { threshold: 0.5 });
+                        observer.observe(this.$el);
+                    },
+                    animateCount() {
+                        const duration = 2000;
+                        const frameDuration = 1000 / 60;
+                        const totalFrames = Math.round(duration / frameDuration);
+                        let frame = 0;
+                        
+                        const counter = setInterval(() => {
+                            frame++;
+                            const progress = frame / totalFrames;
+                            this.count = this.target * progress;
+
+                            if (frame === totalFrames) {
+                                this.count = this.target;
+                                clearInterval(counter);
+                            }
+                        }, frameDuration);
+                    }
+                }));
+            });
+        });
+    </script>
+
+</body>
+</ht

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Obsidian Trading Line</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Alpine.js for interactivity -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .page-header-bg {
+            background-image: linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 0.8)), url('/images/index/cover.png');
+            background-size: cover;
+            background-position: center;
+        }
+        /* Animation classes for scroll-triggered effects */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-up.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800" x-data="{ mobileMenuOpen: false }">
+
+    <!-- ======== Header & Navigation Section ======== -->
+    <header class="bg-white/80 backdrop-blur-sm shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <!-- Updated Logo and Company Name -->
+            <a href="index.html" class="flex items-center space-x-3">
+                <img src="/images/icon/OTL_LOGO.png" alt="Obsidian Trading Line Logo" class="h-12 w-auto">
+                <img src="/images/icon/OTL_NAME.png" alt="Obsidian Trading Line" class="hidden sm:inline-block h-12 w-auto">
+            </a>
+            
+            <!-- Desktop Menu -->
+            <ul class="hidden lg:flex items-center space-x-10">
+                <li><a href="index.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">Home</a></li>
+                <li><a href="about.html" class="text-gray-900 font-semibold border-b-2 border-blue-600 pb-1">About Us</a></li>
+                <li><a href="products.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">Products</a></li>
+                <li><a href="network.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">Global Network</a></li>
+                <li><a href="contact.html" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded-lg transition duration-300 shadow-md hover:shadow-lg">Contact Us</a></li>
+            </ul>
+            
+            <!-- Mobile Menu Button -->
+            <button @click="mobileMenuOpen = !mobileMenuOpen" class="lg:hidden text-gray-700 focus:outline-none">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        
+        <!-- Mobile Menu -->
+        <div x-show="mobileMenuOpen" @click.away="mobileMenuOpen = false" class="lg:hidden">
+            <ul class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <li><a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-blue-600">Home</a></li>
+                <li><a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-blue-600">About Us</a></li>
+                <li><a href="products.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-blue-600">Products</a></li>
+                <li><a href="network.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-blue-600">Global Network</a></li>
+                <li><a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-blue-600">Contact Us</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- ======== Page Header Section ======== -->
+        <section class="page-header-bg text-white">
+            <div class="container mx-auto px-6 py-24 md:py-32 text-center">
+                <h1 class="text-4xl md:text-6xl font-extrabold">About Obsidian Trading Line</h1>
+                <p class="mt-4 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">Your trusted partner in global commerce, dedicated to quality, reliability, and excellence.</p>
+            </div>
+        </section>
+
+        <!-- ======== Who We Are Section ======== -->
+        <section class="py-20 md:py-28">
+            <div class="container mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                    <div class="fade-in-up">
+                        <img src="/images/Abouts/img1.png" alt="Team collaborating on a global map" class="rounded-lg shadow-2xl w-full h-auto">
+                    </div>
+                    <div class="fade-in-up">
+                        <span class="text-blue-600 font-semibold uppercase">Our Story</span>
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-6">Pioneering Global Trade with Integrity</h2>
+                        <p class="text-lg text-gray-600 mb-4 leading-relaxed">
+                            Obsidian Trading Line is an international trading company committed to delivering premium products at competitive prices. Our expertise spans pharmaceuticals, agro commodities, industrial goods, and renewable energy.
+                        </p>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            We build bridges between markets, ensuring our clients receive exceptional value and service, every time. Our foundation is built on creating long-term partnerships based on trust and mutual success.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ======== Mission & Vision Section ======== -->
+        <section class="py-20 md:py-28 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-10 lg:gap-16">
+                    <!-- Mission -->
+                    <div class="fade-in-up">
+                        <div class="bg-blue-600 text-white rounded-full h-16 w-16 flex items-center justify-center mb-6 shadow-lg">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2h1a2 2 0 002-2v-1a2 2 0 012-2h1.945M7.881 4.002l.07-.055a2 2 0 012.828 0l.07.055a2 2 0 010 2.828l-.07.055a2 2 0 01-2.828 0l-.07-.055a2 2 0 010-2.828zM12 18a6 6 0 100-12 6 6 0 000 12z"></path></svg>
+                        </div>
+                        <h3 class="text-3xl font-bold text-gray-900 mb-3">Our Mission</h3>
+                        <p class="text-gray-600 text-lg leading-relaxed">
+                            To bridge markets globally by providing high-quality products and building long-term partnerships based on trust and excellence.
+                        </p>
+                    </div>
+                    <!-- Vision -->
+                    <div class="fade-in-up" style="transition-delay: 0.2s;">
+                        <div class="bg-gray-800 text-white rounded-full h-16 w-16 flex items-center justify-center mb-6 shadow-lg">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                        </div>
+                        <h3 class="text-3xl font-bold text-gray-900 mb-3">Our Vision</h3>
+                        <p class="text-gray-600 text-lg leading-relaxed">
+                            To be a world-class trading hub for diverse industries, creating value through reliability, innovation, and sustainable business practices.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======== Why Choose Us Section ======== -->
+        <section class="py-20 md:py-28 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-16 fade-in-up">
+                    <span class="text-blue-600 font-semibold uppercase">Our Advantage</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">The Pillars of Our Success</h2>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Feature 1 -->
+                    <div class="text-center p-6 fade-in-up">
+                        <div class="bg-gray-100 rounded-lg p-4 inline-block mb-4"><img src="https://placehold.co/48x48/3b82f6/ffffff?text=🤝" alt="Network Icon"></div>
+                        <h4 class="text-xl font-semibold mb-2">Strong Supplier Network</h4>
+                        <p class="text-gray-600">Deep-rooted partnerships in China & Africa ensure access to premium goods.</p>
+                    </div>
+                    <!-- Feature 2 -->
+                    <div class="text-center p-6 fade-in-up" style="transition-delay: 0.15s;">
+                        <div class="bg-gray-100 rounded-lg p-4 inline-block mb-4"><img src="https://placehold.co/48x48/10b981/ffffff?text=🌍" alt="Globe Icon"></div>
+                        <h4 class="text-xl font-semibold mb-2">Global Client Base</h4>
+                        <p class="text-gray-600">Serving satisfied clients across Europe, the USA, and other key markets.</p>
+                    </div>
+                    <!-- Feature 3 -->
+                    <div class="text-center p-6 fade-in-up" style="transition-delay: 0.3s;">
+                        <div class="bg-gray-100 rounded-lg p-4 inline-block mb-4"><img src="https://placehold.co/48x48/f59e0b/ffffff?text=⏱️" alt="Clock Icon"></div>
+                        <h4 class="text-xl font-semibold mb-2">Competitive & Timely</h4>
+                        <p class="text-gray-600">We offer competitive pricing and guarantee on-time delivery.</p>
+                    </div>
+                    <!-- Feature 4 -->
+                    <div class="text-center p-6 fade-in-up" style="transition-delay: 0.45s;">
+                        <div class="bg-gray-100 rounded-lg p-4 inline-block mb-4"><img src="https://placehold.co/48x48/ef4444/ffffff?text=🛡️" alt="Shield Icon"></div>
+                        <h4 class="text-xl font-semibold mb-2">Strict Quality Control</h4>
+                        <p class="text-gray-600">Uncompromising standards to ensure product excellence and safety.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    <!-- ======== Footer Section ======== -->
+    <footer class="bg-gray-900 text-white">
+        <div class="container mx-auto px-6 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2 lg:col-span-1">
+                    <a href="index.html" class="flex items-center space-x-3">
+<img src="/images/icon/OTL_NAME.png" alt="Obsidian Trading Line Logo" class="h-12 w-auto filter invert">
+                    </a>
+                    <p class="mt-4 text-gray-400">Your strategic partner in global trade and logistics.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="products.html" class="text-gray-400 hover:text-white">Products</a></li>
+                        <li><a href="network.html" class="text-gray-400 hover:text-white">Network</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Industries</h4>
+                    <ul class="space-y-2">
+                        <li><a href="products/pharmaceuticals.html" class="text-gray-400 hover:text-white">Pharmaceuticals</a></li>
+                        <li><a href="products/agro-food.html" class="text-gray-400 hover:text-white">Agro Commodities</a></li>
+                        <li><a href="products/industrial-supplies.html" class="text-gray-400 hover:text-white">Industrial Supplies</a></li>
+                        <li><a href="products/renewable-energy.html" class="text-gray-400 hover:text-white">Renewable Energy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Get in Touch</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>contact@obsidiantradingline.com</li>
+                        <li>+[Your Phone Number]</li>
+                        <li>[Your City, Country]</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-16 pt-8 border-t border-gray-800 text-center text-gray-500">
+                <p>&copy; 2025 Obsidian Trading Line. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Animations -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Alpine.js is used for the mobile menu, defined in the body tag.
+            
+            // Scroll-triggered fade-in animation
+            const animatedElements = document.querySelectorAll('.fade-in-up');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            animatedElements.forEach(el => observer.observe(el));
+        });
+    </script>
+
+</body>
+</html>

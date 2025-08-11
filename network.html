@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Network - Obsidian Trading Line</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Alpine.js for interactivity -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .page-header-bg {
+            background-image: linear-gradient(rgba(17, 24, 39, 0.7), rgba(17, 24, 39, 0.7)), url('/images/Network/cover.png');
+            background-size: cover;
+            background-position: center;
+        }
+        .map-bg {
+            background-image: url('/images/Network/img1.png');
+            background-size: cover;
+            background-position: center;
+        }
+        /* Animation classes for scroll-triggered effects */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-up.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800" x-data="{ mobileMenuOpen: false }">
+
+    <!-- ======== Header & Navigation Section ======== -->
+    <header class="bg-white/80 backdrop-blur-sm shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <!-- Updated Logo and Company Name -->
+            <a href="index.html" class="flex items-center space-x-3">
+                <img src="/images/icon/OTL_LOGO.png" alt="Obsidian Trading Line Logo" class="h-12 w-auto">
+                <img src="/images/icon/OTL_NAME.png" alt="Obsidian Trading Line" class="hidden sm:inline-block h-12 w-auto">
+            </a>
+            
+            <!-- Desktop Menu -->
+            <ul class="hidden lg:flex items-center space-x-10">
+                <li><a href="index.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">Home</a></li>
+                <li><a href="about.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">About Us</a></li>
+                <li><a href="products.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">Products</a></li>
+                <li><a href="network.html" class="text-gray-900 font-semibold border-b-2 border-blue-600 pb-1">Global Network</a></li>
+                <li><a href="contact.html" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded-lg transition duration-300 shadow-md hover:shadow-lg">Contact Us</a></li>
+            </ul>
+            
+            <!-- Mobile Menu Button -->
+            <button @click="mobileMenuOpen = !mobileMenuOpen" class="lg:hidden text-gray-700 focus:outline-none">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        
+        <!-- Mobile Menu -->
+        <div x-show="mobileMenuOpen" @click.away="mobileMenuOpen = false" class="lg:hidden">
+            <ul class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <li><a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-blue-600">Home</a></li>
+                <li><a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-blue-600">About Us</a></li>
+                <li><a href="products.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-blue-600">Products</a></li>
+                <li><a href="network.html" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-blue-600">Global Network</a></li>
+                <li><a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-blue-600">Contact Us</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- ======== Page Header Section ======== -->
+        <section class="page-header-bg text-white">
+            <div class="container mx-auto px-6 py-24 md:py-32 text-center">
+                <h1 class="text-4xl md:text-6xl font-extrabold">Our Global Network</h1>
+                <p class="mt-4 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">Connecting continents, one shipment at a time. We are where you need us to be.</p>
+            </div>
+        </section>
+
+        <!-- ======== Network Overview Section ======== -->
+        <section class="py-20 md:py-28 bg-white relative">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-16 fade-in-up">
+                    <span class="text-blue-600 font-semibold uppercase">Our Reach</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Operating Across Continents</h2>
+                    <p class="text-lg text-gray-600 mt-4">Our strength lies in our expansive and strategically positioned network. We have cultivated deep-rooted relationships with premier suppliers and manufacturers, ensuring we source only the highest quality products for our global clientele.</p>
+                </div>
+                
+                <!-- Interactive Map Section -->
+                <div class="relative map-bg rounded-2xl shadow-2xl p-8 md:p-12 min-h-[600px] flex items-center justify-center fade-in-up">
+                    <div class="absolute inset-0 bg-gray-900/30 rounded-2xl"></div>
+                    <div class="relative w-full grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Suppliers Card -->
+                        <div class="bg-white/80 backdrop-blur-md p-8 rounded-xl shadow-lg border border-gray-200">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-3">Our Supplier Hubs</h3>
+                            <p class="text-gray-700">Primarily located in key industrial and agricultural centers across <span class="font-bold text-blue-600">China</span> and <span class="font-bold text-green-600">Africa</span>, giving us direct access to source materials.</p>
+                        </div>
+                        <!-- Clients Card -->
+                        <div class="bg-white/80 backdrop-blur-md p-8 rounded-xl shadow-lg border border-gray-200">
+                             <h3 class="text-2xl font-bold text-gray-900 mb-3">Our Client Markets</h3>
+                            <p class="text-gray-700">We proudly serve a diverse client base in <span class="font-bold text-indigo-600">Europe</span>, the <span class="font-bold text-red-600">USA</span>, and the <span class="font-bold text-yellow-600">Middle East</span>, delivering tailored solutions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ======== Logistics Partnership Section ======== -->
+        <section class="py-20 md:py-28 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-16 fade-in-up">
+                    <span class="text-blue-600 font-semibold uppercase">Our Capabilities</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Reliable Logistics, Worldwide Delivery</h2>
+                    <p class="text-lg text-gray-600 mt-4">A strong network is only as good as its ability to deliver. Our robust partnerships with leading logistics providers ensure every shipment is handled with care, providing safe, fast, and cost-effective delivery to any corner of the globe.</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Logistics Mode 1: Sea -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg text-center fade-in-up">
+                        <div class="bg-blue-100 text-blue-600 rounded-full h-16 w-16 flex items-center justify-center mx-auto mb-5"><svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10l2 2h8a1 1 0 001-1zM3 11h10M16 16l4-4m0 0l-4-4m4 4H9" /></svg></div>
+                        <h4 class="text-xl font-semibold mb-2">Sea Freight</h4>
+                        <p class="text-gray-600">Cost-effective solutions for large volume shipments.</p>
+                    </div>
+                    <!-- Logistics Mode 2: Air -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg text-center fade-in-up" style="transition-delay: 0.15s;">
+                        <div class="bg-blue-100 text-blue-600 rounded-full h-16 w-16 flex items-center justify-center mx-auto mb-5"><svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" /></svg></div>
+                        <h4 class="text-xl font-semibold mb-2">Air Freight</h4>
+                        <p class="text-gray-600">Fast and reliable delivery for time-sensitive cargo.</p>
+                    </div>
+                    <!-- Logistics Mode 3: Rail -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg text-center fade-in-up" style="transition-delay: 0.3s;">
+                        <div class="bg-blue-100 text-blue-600 rounded-full h-16 w-16 flex items-center justify-center mx-auto mb-5"><svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" /><path d="M8.228 9.004L2.94 11.94l-1.47-2.94 5.288-2.938m10.514 10.88l5.288 2.938-1.47 2.94-5.288-2.938" /><path stroke-linecap="round" stroke-linejoin="round" d="M10 20.5a1 1 0 11-2 0 1 1 0 012 0zm6 0a1 1 0 11-2 0 1 1 0 012 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.5 18.5l17-13" /></svg></div>
+                        <h4 class="text-xl font-semibold mb-2">Rail Transport</h4>
+                        <p class="text-gray-600">Efficient overland transport across continents.</p>
+                    </div>
+                    <!-- Logistics Mode 4: Road -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg text-center fade-in-up" style="transition-delay: 0.45s;">
+                        <div class="bg-blue-100 text-blue-600 rounded-full h-16 w-16 flex items-center justify-center mx-auto mb-5"><svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg></div>
+                        <h4 class="text-xl font-semibold mb-2">Road Freight</h4>
+                        <p class="text-gray-600">Flexible last-mile delivery and regional distribution.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======== CTA Section ======== -->
+        <section class="bg-gray-800">
+            <div class="container mx-auto px-6 py-20 text-center">
+                <h2 class="text-3xl font-bold text-white">Partner with a Global Leader</h2>
+                <p class="text-gray-300 mt-3 mb-8 max-w-2xl mx-auto">Leverage our network to meet your sourcing and supply needs. Reach out to our team to discover how we can work together.</p>
+                <a href="contact.html" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-10 rounded-lg transition duration-300 text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                    Get in Touch
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ======== Footer Section ======== -->
+    <footer class="bg-gray-900 text-white">
+        <div class="container mx-auto px-6 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2 lg:col-span-1">
+                    <a href="index.html" class="flex items-center space-x-3">
+                        <img src="/images/icon/OTL_NAME.png" alt="Obsidian Trading Line Logo" class="h-12 w-auto filter invert">
+                    </a>
+                    <p class="mt-4 text-gray-400">Your strategic partner in global trade and logistics.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="products.html" class="text-gray-400 hover:text-white">Products</a></li>
+                        <li><a href="network.html" class="text-gray-400 hover:text-white">Network</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Industries</h4>
+                    <ul class="space-y-2">
+                        <li><a href="products/pharmaceuticals.html" class="text-gray-400 hover:text-white">Pharmaceuticals</a></li>
+                        <li><a href="products/agro-food.html" class="text-gray-400 hover:text-white">Agro Commodities</a></li>
+                        <li><a href="products/industrial-supplies.html" class="text-gray-400 hover:text-white">Industrial Supplies</a></li>
+                        <li><a href="products/renewable-energy.html" class="text-gray-400 hover:text-white">Renewable Energy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Get in Touch</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>contact@obsidiantradingline.com</li>
+                        <li>+[Your Phone Number]</li>
+                        <li>[Your City, Country]</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-16 pt-8 border-t border-gray-800 text-center text-gray-500">
+                <p>&copy; 2025 Obsidian Trading Line. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Animations -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Alpine.js is used for the mobile menu, defined in the body tag.
+            
+            // Scroll-triggered fade-in animation
+            const animatedElements = document.querySelectorAll('.fade-in-up');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            animatedElements.forEach(el => observer.observe(el));
+        });
+    </script>
+
+</body>
+</html>
